@@ -58,7 +58,7 @@ body , html{
   position: relative;
   margin-top: -30%;
 }
-.card-front .description {
+.card-front .description , .ibu , .abv {
   display: none;
 }
 
@@ -89,7 +89,7 @@ body , html{
 
 .description {
   font-size: 12px;
-  margin-top: 10px;
+  margin-top: 3px;
   text-align: justify;
   padding: 10px;
   display: none;
@@ -104,6 +104,12 @@ body , html{
 }
 
 .card.flipped .description{
+  display: block;
+}
+.card.flipped .abv{
+  display: block;
+}
+.card.flipped .ibu{
   display: block;
 }
 
@@ -141,12 +147,6 @@ body , html{
   }
   }
 
-  
-  card:hover firs{
-    transform: translateY(-65%);
-    background-color: red;
-  }
-
   .title{
     color: white;
     text-align: center;
@@ -157,6 +157,16 @@ body , html{
     color: white;
     text-align: center;
 
+  }
+
+
+  .ibu{
+    font-size: 12px;
+    text-align: start;
+  }
+  .abv{
+    font-size: 12px;
+    text-align: end;
   }
 
   

@@ -19,17 +19,17 @@ function Card({ beer, handleCardHoverEnter }) {
     setIsFlipped(!isFlipped);
   };
 
+  const containerClasses = `card-container ${
+    isLoading ? "loading" : ""
+  } ${isLoaded ? "loaded card-fade-in" : ""}`;
+
   return (
     <div
       className={`card ${isFlipped ? "flipped" : ""}`}
       onClick={handleClick}
       onMouseEnter={handleCardHoverEnter}
     >
-      <div
-        className={`card-container ${
-          isLoading ? "loading" : ""
-        } ${isLoaded ? "loaded" : ""}`}
-      >
+      <div className={containerClasses}>
         <div className="card-front">
           {beer?.name && <p className="name">{beer.name}</p>}
           {beer?.image_url && (
@@ -38,6 +38,12 @@ function Card({ beer, handleCardHoverEnter }) {
           {beer?.tagline && <p className="style">{beer.tagline}</p>}
         </div>
         <div className="card-back">
+          {beer?.abv && (
+            <p className="abv">ABV:{beer.abv}</p>
+          )}
+          {beer?.ibu && (
+            <p className="ibu">IBU:{beer.ibu}</p>
+          )}
           {beer?.description && (
             <p className="description">{beer.description}</p>
           )}
