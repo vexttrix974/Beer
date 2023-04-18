@@ -207,6 +207,7 @@ body , html{
       z-index: -2;
     }
 
+    
     .reload:before {
       content: '';
       position: absolute;
